@@ -6,7 +6,9 @@ import { CompatibilityPage } from './pages/CompatibilityPage';
 import { AboutPage } from './pages/AboutPage';
 import { VietnameseZodiacPage } from './pages/VietnameseZodiacPage';
 import BirthChartPage from './pages/BirthChartPage';
+import ThemeToggle from './components/ThemeToggle';
 import './styles/globals.css';
+import './styles/themes.css';
 import styles from './App.module.css';
 
 const Navigation: React.FC = () => {
@@ -39,16 +41,20 @@ const Navigation: React.FC = () => {
             <span className={styles.logoText}>Tử Vi Việt</span>
           </Link>
 
-          <button 
-            className={`${styles.menuToggle} ${isMenuOpen ? styles.open : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle navigation menu"
-            aria-expanded={isMenuOpen}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div className={styles.headerActions}>
+            <ThemeToggle />
+            
+            <button 
+              className={`${styles.menuToggle} ${isMenuOpen ? styles.open : ''}`}
+              onClick={toggleMenu}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMenuOpen}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
 
           <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
             {navItems.map(item => (
