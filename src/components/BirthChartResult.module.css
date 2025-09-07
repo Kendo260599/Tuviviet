@@ -1,0 +1,741 @@
+.birthChartResult {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8f4fd 100%);
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: #5a4fcf;
+  transform: translateY(-50%) translateX(-2px);
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.birthInfo {
+  font-size: 18px;
+  color: #636e72;
+  margin: 8px 0 0 0;
+}
+
+/* Four Pillars */
+.fourPillars {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fourPillars h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.pillar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.pillar:hover::before {
+  top: -100%;
+  right: -100%;
+}
+
+.pillar h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.canChi {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.can, .chi {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.element {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  display: inline-block;
+}
+
+/* Day Master */
+.dayMaster {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dayMaster h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 16px;
+}
+
+.dayMasterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.dayMasterCan {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dayMasterInfo p {
+  font-size: 16px;
+  color: #636e72;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Element Analysis */
+.elementAnalysis {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.elementAnalysis h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.elementGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.luckyElements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.elementSection h4 {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.elementList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.elementTag {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.elementTag.lucky {
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.elementTag.unlucky {
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Current Phase */
+.currentPhase {
+  background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.currentPhase h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.phaseCard {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.phaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.phaseCanChi {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.phaseAge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.phaseFortune {
+  font-weight: 700;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.phaseDescription, .phaseAdvice {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Personality */
+.personality {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.personality h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.personalityGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.personalitySection h4 {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 12px;
+}
+
+.personalitySection ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #636e72;
+}
+
+.personalitySection li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.personalityDetails {
+  display: grid;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.detailSection h4 {
+  font-size: 16px;
+  color: #2d3436;
+  margin-bottom: 8px;
+}
+
+.detailSection p {
+  color: #636e72;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.careerList, .healthList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.careerTag, .healthTag {
+  background: #f1f3f4;
+  color: #2d3436;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.healthList span:first-child {
+  color: #636e72;
+  font-weight: 500;
+}
+
+/* Life Phases */
+.lifePhases {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lifePhases h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.phasesTimeline {
+  display: grid;
+  gap: 16px;
+}
+
+.phaseItem {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 4px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.phaseItem.current {
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  color: white;
+  border-left-color: #fff;
+  transform: scale(1.02);
+}
+
+.phaseItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(4px);
+}
+
+.phaseTime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.phaseAgeRange {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.phaseCanChiSmall {
+  font-weight: 600;
+  padding: 2px 8px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.phaseItem.current .phaseCanChiSmall {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.phaseInfo {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.phaseFortuneSmall, .phaseElementSmall {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.phaseItem.current .phaseFortuneSmall,
+.phaseItem.current .phaseElementSmall {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.phaseAdviceSmall {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Compatibility */
+.compatibility {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.compatibility h3 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.compatibilityGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.compatibilitySection h4 {
+  font-size: 18px;
+  color: #2d3436;
+  margin-bottom: 12px;
+}
+
+.matchList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.matchTag {
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.bestMatch {
+  background: #00b894;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+}
+
+.challengingMatch {
+  background: #e17055;
+  color: white;
+  box-shadow: 0 2px 8px rgba(225, 112, 85, 0.3);
+}
+
+.matchTag:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.disclaimer {
+  font-size: 14px;
+  color: #e17055;
+  background: #ffeaa7;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.backButtonBottom {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButtonBottom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .birthChartResult {
+    padding: 16px;
+  }
+  
+  .header {
+    margin-bottom: 24px;
+  }
+  
+  .header h2 {
+    font-size: 24px;
+  }
+  
+  .backButton {
+    position: static;
+    transform: none;
+    margin-bottom: 16px;
+    display: block;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  
+  .elementGrid,
+  .luckyElements,
+  .personalityGrid,
+  .compatibilityGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .phaseHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .phaseTime {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .phaseInfo {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .birthChartResult {
+    padding: 12px;
+  }
+  
+  .fourPillars,
+  .dayMaster,
+  .elementAnalysis,
+  .currentPhase,
+  .personality,
+  .lifePhases,
+  .compatibility {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .pillarsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .can, .chi {
+    font-size: 18px;
+    padding: 6px 8px;
+  }
+  
+  .dayMasterCan {
+    font-size: 36px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .birthChartResult {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+    color: white;
+  }
+  
+  .fourPillars,
+  .dayMaster,
+  .elementAnalysis,
+  .personality,
+  .lifePhases,
+  .compatibility {
+    background: #2d3436;
+    color: white;
+  }
+  
+  .fourPillars h3,
+  .dayMaster h3,
+  .elementAnalysis h3,
+  .personality h3,
+  .lifePhases h3,
+  .compatibility h3,
+  .elementSection h4,
+  .personalitySection h4,
+  .compatibilitySection h4,
+  .detailSection h4 {
+    color: white;
+  }
+  
+  .dayMasterInfo p,
+  .personalitySection li,
+  .detailSection p {
+    color: #b2bec3;
+  }
+  
+  .phaseItem {
+    background: #636e72;
+    color: white;
+  }
+  
+  .careerTag,
+  .healthTag {
+    background: #636e72;
+    color: white;
+  }
+  
+  .enhancedButton {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  .enhancedSection {
+    background: #2d3436;
+  }
+  
+  .enhancedTitle {
+    color: white;
+  }
+}
+
+/* Enhanced Analysis Styles */
+.enhancedToggle {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.enhancedButton {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(116, 185, 255, 0.4);
+}
+
+.enhancedButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(116, 185, 255, 0.6);
+}
+
+.enhancedSection {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.enhancedTitle {
+  font-size: 28px;
+  color: #2d3436;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

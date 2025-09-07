@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kendo260599.github.io/Tuviviet/sitemap.xml
+
+# Disallow certain file types
+Disallow: *.json$
+Disallow: *.js.map$
+Disallow: *.css.map$
+
+# Allow well-known paths
+Allow: /manifest.json
+Allow: /favicon.svg

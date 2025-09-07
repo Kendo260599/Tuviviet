@@ -1,0 +1,51 @@
+{
+  "name": "Tử Vi Việt",
+  "short_name": "TuViViet",
+  "description": "Xem tử vi hàng ngày miễn phí cho 12 cung hoàng đạo",
+  "start_url": "/Tuviviet/",
+  "scope": "/Tuviviet/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B5A9F",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "entertainment"],
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tử vi hôm nay",
+      "short_name": "Hôm nay",
+      "description": "Xem tử vi hôm nay",
+      "url": "/Tuviviet/",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Tương hợp cung",
+      "short_name": "Tương hợp",
+      "description": "Xem độ tương hợp các cung hoàng đạo",
+      "url": "/Tuviviet/compatibility",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
