@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BirthChartInput from '../components/BirthChartInput';
 import BirthChartResult from '../components/BirthChartResult';
+import { EnhancedLoadingWrapper } from '../components/LoadingStates';
 import { calculateBirthChart, validateBirthDateTime } from '../utils/birthChartUtils';
 import { BirthChart } from '../data/canChiData';
 import styles from './BirthChartPage.module.css';
@@ -10,10 +11,12 @@ const BirthChartPage: React.FC = () => {
   const [currentAge, setCurrentAge] = useState<number | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
   const handleCalculate = async (year: number, month: number, day: number, hour: number, minute: number, age?: number) => {
     setLoading(true);
     setError(null);
+    setSuccess(null);
 
     try {
       // Validate input
@@ -24,10 +27,11 @@ const BirthChartPage: React.FC = () => {
       // Simulate calculation delay for better UX
       await new Promise(resolve => setTimeout(resolve, 1500));
 
-      // Calculate birth chart
+      // Calculate birth chart - CORE LOGIC UNCHANGED
       const chart = calculateBirthChart(year, month, day, hour, minute);
       setBirthChart(chart);
       setCurrentAge(age);
+      setSuccess('Lá số tử vi đã được tính toán thành công!');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tính toán');
     } finally {
@@ -39,6 +43,12 @@ const BirthChartPage: React.FC = () => {
     setBirthChart(null);
     setCurrentAge(undefined);
     setError(null);
+    setSuccess(null);
+  };
+
+  const handleRetry = () => {
+    setError(null);
+    setSuccess(null);
   };
 
   if (birthChart) {
@@ -95,20 +105,19 @@ const BirthChartPage: React.FC = () => {
           </div>
         </div>
 
-        {error && (
-          <div className={styles.errorContainer}>
-            <div className={styles.error}>
-              <span className={styles.errorIcon}>⚠️</span>
-              <span>{error}</span>
-              <button onClick={() => setError(null)} className={styles.errorClose}>
-                ×
-              </button>
-            </div>
-          </div>
-        )}
-
-        <div className={styles.inputSection}>
-          <BirthChartInput onCalculate={handleCalculate} loading={loading} />
+                <div className={styles.inputSection}>
+          <EnhancedLoadingWrapper
+            isLoading={loading}
+            error={error}
+            success={success}
+            loadingText="Đang tính toán lá số tử vi của bạn..."
+            onRetry={handleRetry}
+          >
+            <BirthChartInput 
+              onCalculate={handleCalculate}
+              loading={loading}
+            />
+          </EnhancedLoadingWrapper>
         </div>
 
         <div className={styles.info}>

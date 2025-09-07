@@ -12,7 +12,7 @@ interface BirthChartResultProps {
 }
 
 const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack, currentAge }) => {
-  const [showEnhancedAnalysis, setShowEnhancedAnalysis] = useState(false);
+  const [showEnhancedAnalysis, setShowEnhancedAnalysis] = useState(true); // Auto-show enhanced analysis
   const formatDate = (date: { year: number; month: number; day: number; hour: number; minute: number }) => {
     return `${date.day}/${date.month}/${date.year} lúc ${date.hour.toString().padStart(2, '0')}:${date.minute.toString().padStart(2, '0')}`;
   };
