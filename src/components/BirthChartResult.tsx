@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BirthChart } from '../data/canChiData';
-import EnhancedAnalysis from './EnhancedAnalysis';
+import { EnhancedAnalysis } from './EnhancedAnalysis';
 import EnhancedSummary from './EnhancedSummary';
 import QuickTips from './QuickTips';
 import styles from './BirthChartResult.module.css';
@@ -12,6 +12,11 @@ interface BirthChartResultProps {
 }
 
 const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack, currentAge }) => {
+  console.log('🎯 BirthChartResult rendering with:', {
+    birthChart: !!birthChart,
+    dayMaster: birthChart?.dayMaster,
+    currentAge
+  });
   const [showEnhancedAnalysis, setShowEnhancedAnalysis] = useState(true); // Auto-show enhanced analysis
   const formatDate = (date: { year: number; month: number; day: number; hour: number; minute: number }) => {
     return `${date.day}/${date.month}/${date.year} lúc ${date.hour.toString().padStart(2, '0')}:${date.minute.toString().padStart(2, '0')}`;
@@ -354,6 +359,12 @@ const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack,
       {showEnhancedAnalysis && (
         <div className={styles.enhancedSection}>
           <h3 className={styles.enhancedTitle}>📈 Phân Tích Nâng Cao</h3>
+          <div style={{ padding: '10px', backgroundColor: '#f0f0f0', margin: '10px 0' }}>
+            <p><strong>DEBUG INFO:</strong></p>
+            <p>Show Enhanced Analysis: {showEnhancedAnalysis ? 'YES' : 'NO'}</p>
+            <p>Birth Chart Present: {birthChart ? 'YES' : 'NO'}</p>
+            <p>Day Master: {birthChart?.dayMaster || 'N/A'}</p>
+          </div>
           <EnhancedAnalysis 
             birthChart={birthChart} 
             currentAge={currentAge || 25}

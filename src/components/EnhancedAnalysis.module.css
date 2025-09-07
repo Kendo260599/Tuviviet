@@ -1,0 +1,396 @@
+/* 🔮 Enhanced Analysis Component Styles */
+
+.container {
+  margin: 1.5rem 0;
+}
+
+.tabContainer {
+  margin-bottom: 1.5rem;
+}
+
+.tabList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 0.5rem 0.5rem 0 0;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.tab.active {
+  background-color: var(--bg-accent);
+  color: var(--text-accent);
+  border-bottom-color: var(--text-accent);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Personality Analysis Styles */
+.personalitySection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.analysisCard {
+  background-color: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.analysisCard.blue {
+  background-color: var(--bg-accent);
+  border-color: var(--border-accent);
+}
+
+.analysisCard.green {
+  background-color: #f0f9ff;
+  border-color: #7dd3fc;
+}
+
+.analysisCard.emerald {
+  background-color: #ecfdf5;
+  border-color: #6ee7b7;
+}
+
+.analysisCard.amber {
+  background-color: #fffbeb;
+  border-color: #fbbf24;
+}
+
+.analysisCard.purple {
+  background-color: #f5f3ff;
+  border-color: #a78bfa;
+}
+
+.analysisCard.rose {
+  background-color: #fff1f2;
+  border-color: #fb7185;
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] .analysisCard.blue {
+  background-color: #1e3a8a20;
+  border-color: #3b82f6;
+}
+
+[data-theme="dark"] .analysisCard.green {
+  background-color: #14532d20;
+  border-color: #22c55e;
+}
+
+[data-theme="dark"] .analysisCard.emerald {
+  background-color: #064e3b20;
+  border-color: #10b981;
+}
+
+[data-theme="dark"] .analysisCard.amber {
+  background-color: #92400e20;
+  border-color: #f59e0b;
+}
+
+[data-theme="dark"] .analysisCard.purple {
+  background-color: #581c8720;
+  border-color: #8b5cf6;
+}
+
+[data-theme="dark"] .analysisCard.rose {
+  background-color: #9f123420;
+  border-color: #f43f5e;
+}
+
+.cardTitle {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.cardTitle.blue { color: #1d4ed8; }
+.cardTitle.green { color: #16a34a; }
+.cardTitle.emerald { color: #059669; }
+.cardTitle.amber { color: #d97706; }
+.cardTitle.purple { color: #7c3aed; }
+.cardTitle.rose { color: #e11d48; }
+
+[data-theme="dark"] .cardTitle.blue { color: #60a5fa; }
+[data-theme="dark"] .cardTitle.green { color: #4ade80; }
+[data-theme="dark"] .cardTitle.emerald { color: #34d399; }
+[data-theme="dark"] .cardTitle.amber { color: #fbbf24; }
+[data-theme="dark"] .cardTitle.purple { color: #a78bfa; }
+[data-theme="dark"] .cardTitle.rose { color: #fb7185; }
+
+.tagGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.tag.blue {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+
+.tag.green {
+  background-color: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+
+[data-theme="dark"] .tag.blue {
+  background-color: #1e40af30;
+  color: #93c5fd;
+  border-color: #3b82f6;
+}
+
+[data-theme="dark"] .tag.green {
+  background-color: #16653430;
+  color: #86efac;
+  border-color: #22c55e;
+}
+
+.gridTwoColumns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gridTwoColumns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.listItem {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.listItem.emerald { color: #047857; }
+.listItem.amber { color: #b45309; }
+.listItem.purple { color: #6b21a8; }
+.listItem.rose { color: #be123c; }
+
+[data-theme="dark"] .listItem.emerald { color: #34d399; }
+[data-theme="dark"] .listItem.amber { color: #fbbf24; }
+[data-theme="dark"] .listItem.purple { color: #a78bfa; }
+[data-theme="dark"] .listItem.rose { color: #fb7185; }
+
+/* Elements Analysis Styles */
+.elementsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .elementsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .elementsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.elementCard {
+  background-color: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-light);
+  text-align: center;
+}
+
+.elementIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.elementName {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.compatibilityBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.compatibilityBadge.high {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.compatibilityBadge.medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.compatibilityBadge.low {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+[data-theme="dark"] .compatibilityBadge.high {
+  background-color: #16653430;
+  color: #86efac;
+}
+
+[data-theme="dark"] .compatibilityBadge.medium {
+  background-color: #92400e30;
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .compatibilityBadge.low {
+  background-color: #991b1b30;
+  color: #fca5a5;
+}
+
+/* Fortune Analysis Styles */
+.monthSelector {
+  margin-bottom: 1.5rem;
+}
+
+.monthSelectorLabel {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.monthSelectorInput {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.monthSelectorInput:focus {
+  outline: none;
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 2px var(--text-accent)20;
+}
+
+.fortuneCard {
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-medium);
+}
+
+.fortuneTitle {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.fortuneContent {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Life Stage Analysis Styles */
+.lifeStageCard {
+  background-color: var(--bg-card);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--text-accent);
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.lifeStageTitle {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.lifeStageSubtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.lifeStageDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .tabList {
+    flex-direction: column;
+  }
+  
+  .tab {
+    text-align: center;
+    border-radius: 0.5rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+  
+  .tab.active {
+    border-bottom: none;
+    border-left-color: var(--text-accent);
+  }
+  
+  .gridTwoColumns {
+    grid-template-columns: 1fr;
+  }
+  
+  .elementsGrid {
+    grid-template-columns: 1fr;
+  }
+}

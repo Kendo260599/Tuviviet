@@ -7,7 +7,15 @@ import { BirthChart } from '../data/canChiData';
 import styles from './BirthChartPage.module.css';
 
 const BirthChartPage: React.FC = () => {
-  const [birthChart, setBirthChart] = useState<BirthChart | null>(null);
+  // TEMPORARY: Create test birth chart for debugging
+  const debugBirthChart = calculateBirthChart(1990, 5, 15, 10, 30);
+  console.log('🔍 DEBUG: Created test birth chart:', debugBirthChart);
+  // Show visible debug info
+  if (debugBirthChart) {
+    console.log('✅ Birth chart created successfully');
+  }
+  
+  const [birthChart, setBirthChart] = useState<BirthChart | null>(debugBirthChart);
   const [currentAge, setCurrentAge] = useState<number | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
