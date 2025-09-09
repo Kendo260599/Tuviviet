@@ -68,9 +68,21 @@ const BirthChartInput: React.FC<BirthChartInputProps> = ({ onCalculate, loading 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('🚀 Form submitted!');
+    console.log('📝 Form data:', { year, month, day, hour, minute });
     
     if (validateInput()) {
+      console.log('✅ Validation passed!');
       const ageNum = currentAge ? parseInt(currentAge) : undefined;
+      console.log('📊 Calling onCalculate with:', {
+        year: parseInt(year),
+        month: parseInt(month),
+        day: parseInt(day),
+        hour: parseInt(hour),
+        minute: parseInt(minute),
+        age: ageNum
+      });
+      
       onCalculate(
         parseInt(year),
         parseInt(month),
@@ -79,6 +91,8 @@ const BirthChartInput: React.FC<BirthChartInputProps> = ({ onCalculate, loading 
         parseInt(minute),
         ageNum
       );
+    } else {
+      console.log('❌ Validation failed!', errors);
     }
   };
 

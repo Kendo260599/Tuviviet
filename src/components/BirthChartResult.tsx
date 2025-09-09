@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { BirthChart } from '../data/canChiData';
-import EnhancedAnalysis from './EnhancedAnalysis';
-import EnhancedSummary from './EnhancedSummary';
-import QuickTips from './QuickTips';
+import DetailedElementAnalysis from './DetailedElementAnalysis';
+import DetailedPersonalityAnalysis from './DetailedPersonalityAnalysis';
 import styles from './BirthChartResult.module.css';
 
 interface BirthChartResultProps {
   birthChart: BirthChart;
   onBack: () => void;
-  currentAge?: number;
 }
 
-const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack, currentAge }) => {
-  const [showEnhancedAnalysis, setShowEnhancedAnalysis] = useState(false);
+const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack }) => {
+  const [showDetailedAnalysis, setShowDetailedAnalysis] = useState(true);
   const formatDate = (date: { year: number; month: number; day: number; hour: number; minute: number }) => {
     return `${date.day}/${date.month}/${date.year} lúc ${date.hour.toString().padStart(2, '0')}:${date.minute.toString().padStart(2, '0')}`;
   };
@@ -121,11 +119,7 @@ const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack,
         </div>
       </div>
 
-      {/* Enhanced Summary */}
-      <EnhancedSummary birthChart={birthChart} />
 
-      {/* Quick Tips */}
-      <QuickTips birthChart={birthChart} />
 
       {/* Element Analysis */}
       <div className={styles.elementAnalysis}>
@@ -340,24 +334,21 @@ const BirthChartResult: React.FC<BirthChartResultProps> = ({ birthChart, onBack,
         </div>
       </div>
 
-      {/* Enhanced Analysis Toggle */}
-      <div className={styles.enhancedToggle}>
+      {/* Detailed Analysis Toggle */}
+      <div className={styles.detailedToggle}>
         <button 
-          onClick={() => setShowEnhancedAnalysis(!showEnhancedAnalysis)}
-          className={styles.enhancedButton}
+          onClick={() => setShowDetailedAnalysis(!showDetailedAnalysis)}
+          className={styles.detailedButton}
         >
-          {showEnhancedAnalysis ? '📊 Ẩn phân tích chi tiết' : '✨ Xem phân tích nâng cao'}
+          {showDetailedAnalysis ? '📊 Ẩn phân tích chi tiết' : '🔮 Xem phân tích chi tiết'}
         </button>
       </div>
 
-      {/* Enhanced Analysis Section */}
-      {showEnhancedAnalysis && (
-        <div className={styles.enhancedSection}>
-          <h3 className={styles.enhancedTitle}>📈 Phân Tích Nâng Cao</h3>
-          <EnhancedAnalysis 
-            birthChart={birthChart} 
-            currentAge={currentAge || 25}
-          />
+      {/* Detailed Analysis Section */}
+      {showDetailedAnalysis && (
+        <div className={styles.detailedSection}>
+          <DetailedElementAnalysis birthChart={birthChart} />
+          <DetailedPersonalityAnalysis birthChart={birthChart} />
         </div>
       )}
 

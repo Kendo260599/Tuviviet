@@ -6,6 +6,7 @@ import {
   getMonthlyFortunePrediction,
   getLifeStageAnalysis
 } from '../utils/birthChartUtils';
+import styles from './EnhancedAnalysis.module.css';
 
 interface EnhancedAnalysisProps {
   birthChart: BirthChart;

@@ -1,48 +1,73 @@
 import React, { useState } from 'react';
 import BirthChartInput from '../components/BirthChartInput';
 import BirthChartResult from '../components/BirthChartResult';
-import { calculateBirthChart, validateBirthDateTime } from '../utils/birthChartUtils';
+import LifePhasesAnalysis from '../components/LifePhasesAnalysis';
+import ComprehensiveAnalysis from '../components/ComprehensiveAnalysis';
+import PersuasiveAnalysisComponent from '../components/PersuasiveAnalysis';
+import ScientificInsights from '../components/ScientificInsights';
 import { BirthChart } from '../data/canChiData';
+import { calculateBirthChart } from '../utils/birthChartUtils';
 import styles from './BirthChartPage.module.css';
 
 const BirthChartPage: React.FC = () => {
   const [birthChart, setBirthChart] = useState<BirthChart | null>(null);
-  const [currentAge, setCurrentAge] = useState<number | undefined>(undefined);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleCalculate = async (year: number, month: number, day: number, hour: number, minute: number, age?: number) => {
+  const handleCalculate = async (year: number, month: number, day: number, hour: number, minute: number) => {
+    console.log('🎯 handleCalculate called with:', { year, month, day, hour, minute });
     setLoading(true);
     setError(null);
-
+    
     try {
-      // Validate input
-      if (!validateBirthDateTime(year, month, day, hour, minute)) {
-        throw new Error('Thông tin ngày giờ sinh không hợp lệ');
+      // Simple validation
+      if (year < 1900 || year > 2100 || month < 1 || month > 12 || day < 1 || day > 31 || hour < 0 || hour > 23 || minute < 0 || minute > 59) {
+        throw new Error('Thông tin ngày sinh không hợp lệ');
       }
-
+      
+      console.log('⏳ Starting calculation...');
       // Simulate calculation delay for better UX
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       // Calculate birth chart
+      console.log('🧮 Calling calculateBirthChart...');
       const chart = calculateBirthChart(year, month, day, hour, minute);
+      console.log('📊 Birth chart calculated:', chart);
+      
       setBirthChart(chart);
-      setCurrentAge(age);
+      console.log('✅ Birth chart set successfully!');
     } catch (err) {
+      console.error('❌ Error in handleCalculate:', err);
       setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi tính toán');
     } finally {
       setLoading(false);
+      console.log('🏁 Loading set to false');
     }
   };
 
   const handleBack = () => {
     setBirthChart(null);
-    setCurrentAge(undefined);
     setError(null);
   };
 
   if (birthChart) {
-    return <BirthChartResult birthChart={birthChart} onBack={handleBack} currentAge={currentAge} />;
+    return (
+      <div className={styles.birthChartPage}>
+        <div className={styles.container}>
+          <BirthChartResult birthChart={birthChart} onBack={handleBack} />
+          <PersuasiveAnalysisComponent birthChart={birthChart} />
+          <ScientificInsights birthChart={birthChart} />
+          <LifePhasesAnalysis 
+            lifePhases={birthChart.lifePhases}
+            currentAge={new Date().getFullYear() - birthChart.birthDate.year}
+          />
+          <ComprehensiveAnalysis 
+            birthChart={birthChart}
+            currentAge={new Date().getFullYear() - birthChart.birthDate.year}
+          />
+        </div>
+      </div>
+    );
   }
 
   return (

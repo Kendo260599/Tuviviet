@@ -16,9 +16,6 @@ const Navigation: React.FC = () => {
   const navItems = [
     { path: '/', label: 'Trang chủ', icon: '🏠' },
     { path: '/birth-chart', label: 'Lá số tử vi', icon: '🔮' },
-    { path: '/vietnamese-zodiac', label: 'Tử vi Việt Nam', icon: '🐉' },
-    { path: '/your-sign', label: 'Cung của bạn', icon: '⭐' },
-    { path: '/compatibility', label: 'Tương hợp', icon: '💝' },
     { path: '/about', label: 'Giới thiệu', icon: 'ℹ️' }
   ];
 
@@ -83,22 +80,22 @@ const ScrollToTop: React.FC = () => {
 
 const App: React.FC = () => {
   useEffect(() => {
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/Tuviviet/sw.js')
-          .then((registration) => {
-            console.log('SW registered: ', registration);
-          })
-          .catch((registrationError) => {
-            console.log('SW registration failed: ', registrationError);
-          });
-      });
-    }
+    // Service worker registration temporarily disabled
+    // if ('serviceWorker' in navigator) {
+    //   window.addEventListener('load', () => {
+    //     navigator.serviceWorker.register('/sw.js')
+    //       .then((registration) => {
+    //         console.log('SW registered: ', registration);
+    //       })
+    //       .catch((registrationError) => {
+    //         console.log('SW registration failed: ', registrationError);
+    //       });
+    //   });
+    // }
   }, []);
 
   return (
-    <Router basename="/Tuviviet">
+    <Router>
       <div className={styles.app}>
         <ScrollToTop />
         <Navigation />

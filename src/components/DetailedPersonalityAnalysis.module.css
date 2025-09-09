@@ -1,0 +1,351 @@
+.detailedPersonality {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 35px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(31, 38, 135, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Core Personality */
+.corePersonality {
+  margin-bottom: 30px;
+}
+
+.personalityHeader {
+  text-align: center;
+  padding: 25px;
+  border-radius: 16px;
+  border: 3px solid;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  margin-bottom: 20px;
+}
+
+.dayMasterInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dayMasterCan {
+  font-size: 48px;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.elementInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.element {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a5568;
+}
+
+.nature {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.traitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.traitCard {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.traitCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.traitCard h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.traitCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.traitCard li {
+  padding: 8px 0;
+  color: #4a5568;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.traitCard li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Harmony Analysis */
+.harmonyAnalysis {
+  margin-bottom: 30px;
+}
+
+.harmonyAnalysis h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.harmonyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.harmonyCard {
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.harmonyCard.support {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+}
+
+.harmonyCard.conflict {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.harmonyCard.neutral {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: #f59e0b;
+}
+
+.harmonyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.harmonyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.pillarName {
+  font-weight: 700;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.pillarCanChi {
+  font-weight: 600;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.harmonyElement {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.harmonyStatus {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Love Analysis */
+.loveAnalysis {
+  margin-bottom: 30px;
+}
+
+.loveAnalysis h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loveCard {
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(255, 105, 180, 0.1));
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.loveContent p {
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+.loveTraits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loveTrait {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+.loveLabel {
+  font-weight: 700;
+  color: #4a5568;
+  min-width: 150px;
+}
+
+.loveTrait span:last-child {
+  color: #6b7280;
+  flex: 1;
+}
+
+/* Life Advice */
+.lifeAdvice h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.adviceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.adviceCard {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.adviceCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+}
+
+.adviceCard h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 15px;
+}
+
+.adviceCard p {
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detailedPersonality {
+    padding: 25px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .dayMasterCan {
+    font-size: 36px;
+  }
+  
+  .traitsGrid,
+  .harmonyGrid,
+  .adviceGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .personalityHeader {
+    padding: 20px;
+  }
+  
+  .loveTrait {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .loveLabel {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .detailedPersonality {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .dayMasterCan {
+    font-size: 32px;
+  }
+  
+  .traitCard,
+  .adviceCard,
+  .loveCard {
+    padding: 20px;
+  }
+}

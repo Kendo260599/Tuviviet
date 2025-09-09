@@ -1,0 +1,501 @@
+/* Persuasive Analysis - Advanced Styling */
+.persuasiveAnalysis {
+  background: linear-gradient(135deg, 
+    rgba(138, 43, 226, 0.1) 0%,
+    rgba(30, 144, 255, 0.1) 50%,
+    rgba(255, 215, 0, 0.1) 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 32px;
+  margin: 24px 0;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.persuasiveAnalysis::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
+  z-index: -1;
+  animation: mysticalFlow 8s ease-in-out infinite;
+}
+
+@keyframes mysticalFlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 24px 0;
+  font-weight: 300;
+}
+
+.analysisTypeSwitch {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.switchButton {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.switchButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.switchButton.active {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 140, 0, 0.3));
+  border-color: rgba(255, 215, 0, 0.6);
+  color: #FFD700;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.sectionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+}
+
+.sectionButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sectionButton.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.content {
+  min-height: 600px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Evidence Section */
+.evidenceSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.statisticalBox,
+.examplesBox,
+.psychologyBox,
+.historyBox {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.statisticalBox:hover,
+.examplesBox:hover,
+.psychologyBox:hover,
+.historyBox:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.statisticalBox {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
+}
+
+.statisticalData {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.examplesBox h4,
+.psychologyBox h4,
+.historyBox h4,
+.statisticalBox h4 {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.example {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 12px;
+  margin: 12px 0;
+  border-left: 4px solid #FFD700;
+}
+
+/* Stories Section */
+.storiesSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.storyCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.storyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #FF6B6B, #4ECDC4, #45B7D1);
+  background-size: 300% 100%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.storyCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.quoteCard {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 140, 0, 0.2));
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.quoteCard blockquote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #FFD700;
+  font-weight: 600;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Psychology Section */
+.psychologySection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.patternBox,
+.defenseBox,
+.needsBox,
+.shadowBox,
+.integrationBox {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.integrationBox {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(154, 236, 219, 0.2), rgba(46, 213, 115, 0.2));
+}
+
+.patternBox {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.15), rgba(132, 129, 255, 0.15));
+}
+
+.defenseBox {
+  background: linear-gradient(135deg, rgba(255, 99, 132, 0.15), rgba(255, 159, 64, 0.15));
+}
+
+.needsBox {
+  background: linear-gradient(135deg, rgba(255, 206, 84, 0.15), rgba(255, 159, 243, 0.15));
+}
+
+.shadowBox {
+  background: linear-gradient(135deg, rgba(74, 74, 74, 0.3), rgba(138, 138, 138, 0.2));
+}
+
+/* Practical Section */
+.practicalSection {
+  display: grid;
+  gap: 24px;
+}
+
+.practiceLevel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.practiceLevel:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(8px);
+}
+
+.practiceLevel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.practiceLevel li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 8px 0;
+  border-left: 3px solid #4ECDC4;
+  transition: all 0.3s ease;
+}
+
+.practiceLevel li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.missionBox {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.2));
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 32px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  text-align: center;
+}
+
+.lifeMission {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FFD700;
+  line-height: 1.8;
+}
+
+/* Predictions Section */
+.predictionsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.predictionCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.predictionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.probabilityBox {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.probabilityBar {
+  background: rgba(255, 255, 255, 0.2);
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.probabilityFill {
+  background: linear-gradient(90deg, #4ECDC4, #44A08D);
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  position: relative;
+}
+
+.probabilityFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.probabilityText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.footer {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .persuasiveAnalysis {
+    padding: 20px;
+    margin: 16px 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .navigationBar {
+    gap: 8px;
+  }
+  
+  .sectionButton {
+    min-width: 80px;
+    padding: 12px 16px;
+  }
+  
+  .evidenceSection,
+  .storiesSection,
+  .psychologySection,
+  .predictionsSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .quoteCard,
+  .integrationBox,
+  .probabilityBox {
+    grid-column: 1;
+  }
+}
