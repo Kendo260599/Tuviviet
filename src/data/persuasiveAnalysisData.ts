@@ -1,12 +1,37 @@
 // Main Export for Persuasive Analysis Data
-import { persuasiveCanData } from './persuasiveCanData';
-import { persuasiveChiData } from './persuasiveChiData';
-import { PersuasiveAnalysis, ComprehensivePersuasiveAnalysis } from './persuasiveAnalysisTypes';
+import { ThienCan, DiaChi } from './canChiData';
+import { PersuasiveAnalysis } from './persuasiveAnalysisTypes';
 
 // Export types for external use
-export { PersuasiveAnalysis, ComprehensivePersuasiveAnalysis };
+export type { PersuasiveAnalysis };
 
 // 🌟 MAIN DATA EXPORT
+// Export type interface
+export interface ComprehensivePersuasiveAnalysis {
+  personalityDepth: PersuasiveAnalysis;
+  animalWisdom: PersuasiveAnalysis;
+  elementalBalance: {
+    currentState: string;
+    imbalances: string[];
+    healingApproach: string[];
+    optimalStates: string[];
+  };
+  lifePhaseGuidance: {
+    currentPhase: string;
+    challenges: string[];
+    opportunities: string[];
+    actionSteps: string[];
+    nextPhasePreparation: string;
+  };
+  overallPrediction: {
+    next90Days: string;
+    nextYear: string;
+    next5Years: string;
+    confidenceLevel: number;
+  };
+}
+
+// Main data for Thiên Can
 export const persuasiveCanData: Record<ThienCan, PersuasiveAnalysis> = {
   'Giáp': {
     evidenceBasedInsights: {

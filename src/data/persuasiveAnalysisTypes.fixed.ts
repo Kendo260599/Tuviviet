@@ -1,5 +1,5 @@
 // Persuasive Analysis Interface - Core Types
-// Base type imports for analysis system
+import { ThienCan, DiaChi } from './canChiData';
 
 // 🔮 THUYẾT PHỤC & CHI TIẾT NÂNG CAO
 export interface PersuasiveAnalysis {
@@ -47,29 +47,8 @@ export interface PersuasiveAnalysis {
   };
 }
 
-// 🔮 HỆ THỐNG PHÂN TÍCH TỔNG HỢP
-export interface ComprehensivePersuasiveAnalysis {
-  can?: Record<string, PersuasiveAnalysis>;
-  chi?: Record<string, PersuasiveAnalysis>;
-  personalityDepth: PersuasiveAnalysis;
-  animalWisdom: PersuasiveAnalysis;
-  elementalBalance: {
-    currentState: string;
-    imbalances: string[];
-    healingApproach: string[];
-    optimalStates: string[];
-  };
-  lifePhaseGuidance: {
-    currentPhase: string;
-    challenges: string[];
-    opportunities: string[];
-    actionSteps: string[];
-    nextPhasePreparation: string;
-  };
-  overallPrediction: {
-    next90Days: string;
-    nextYear: string;
-    next5Years: string;
-    confidenceLevel: number;
-  };
+// 🔮 HỆ THỐNG PHÂN TÍCH TỔNG HỢP - The renamed type to avoid conflicts
+export interface FullPersuasiveAnalysisData {
+  can: Record<ThienCan, PersuasiveAnalysis>;
+  chi: Record<DiaChi, PersuasiveAnalysis>;
 }

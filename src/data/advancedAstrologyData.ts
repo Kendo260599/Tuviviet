@@ -67,7 +67,7 @@ export interface AdvancedCanAnalysis {
 // 🐉 ENHANCED ĐỊA CHI ANALYSIS (12 Earthly Branches)
 export interface AdvancedChiAnalysis {
   element: FiveElement;
-  hiddenElements: FiveElement[];
+  hiddenElements: string[]; // Thay đổi từ FiveElement[] thành string[] để tương thích với dữ liệu hiện có
   animal: string;
   
   // Time & Space

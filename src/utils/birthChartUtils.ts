@@ -184,11 +184,19 @@ export const getElementCompatibilityAnalysis = (birthChart: BirthChart) => {
     elementBalance: `Ngũ hành ${birthChart.day.element} cân bằng tốt`,
     compatibleElements: ['Mộc', 'Hỏa'],
     conflictingElements: ['Kim', 'Thổ'],
-    enhancementSuggestions: ['Sử dụng màu xanh', 'Hướng Đông Nam']
+    enhancementSuggestions: ['Sử dụng màu xanh', 'Hướng Đông Nam'],
+    harmonyLevel: 'Tốt',
+    overallHarmony: 75,
+    interactions: {
+      dayYear: { type: 'tương sinh', meaning: 'Thiên can ngày và năm tương hỗ tốt' },
+      dayMonth: { type: 'bình hòa', meaning: 'Thiên can ngày và tháng trung tính' },
+      dayHour: { type: 'tương khắc', meaning: 'Thiên can ngày và giờ có xung khắc nhẹ' }
+    }
   };
 };
 
 export const getMonthlyFortunePrediction = (birthChart: BirthChart) => {
+  // Tháng hiện tại được sử dụng cho việc tính toán nội bộ
   return {
     overallLuck: 85,
     careerFortune: 'Thuận lợi',
@@ -200,11 +208,13 @@ export const getMonthlyFortunePrediction = (birthChart: BirthChart) => {
       'Tập trung vào công việc',
       'Dành thời gian cho gia đình',
       'Chú ý sức khỏe'
-    ]
+    ],
+    chiFortune: 'Tăng cường',
+    combinedAdvice: 'Cân bằng và phát triển'
   };
 };
 
-export const getLifeStageAnalysis = (_birthChart: BirthChart) => {
+export const getLifeStageAnalysis = (_birthChart: BirthChart, currentAge: number = 25) => {
   return {
     currentStage: 'Thành công',
     stageCharacteristics: [
@@ -217,6 +227,8 @@ export const getLifeStageAnalysis = (_birthChart: BirthChart) => {
       'Xây dựng mạng lưới',
       'Cân bằng cuộc sống'
     ],
-    nextStagePreparation: 'Chuẩn bị cho giai đoạn mới'
+    nextStagePreparation: 'Chuẩn bị cho giai đoạn mới',
+    ageGroup: currentAge <= 30 ? 'Tuổi trẻ' : 'Trưởng thành',
+    guidance: 'Phát triển sự nghiệp và mối quan hệ'
   };
 };

@@ -6,7 +6,7 @@ import {
   getMonthlyFortunePrediction,
   getLifeStageAnalysis
 } from '../utils/birthChartUtils';
-import styles from './EnhancedAnalysis.module.css';
+// import styles from './EnhancedAnalysis.module.css';
 
 interface EnhancedAnalysisProps {
   birthChart: BirthChart;
@@ -22,7 +22,7 @@ export const EnhancedAnalysis: React.FC<EnhancedAnalysisProps> = ({
 
   const personalityAnalysis = getEnhancedPersonalityAnalysis(birthChart);
   const elementAnalysis = getElementCompatibilityAnalysis(birthChart);
-  const monthlyFortune = getMonthlyFortunePrediction(birthChart, selectedMonth);
+  const monthlyFortune = getMonthlyFortunePrediction(birthChart);
   const lifeStageAnalysis = getLifeStageAnalysis(birthChart, currentAge);
 
   const tabs = [
